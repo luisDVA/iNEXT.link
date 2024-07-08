@@ -486,8 +486,8 @@ datainfphy <- function(data, row.tree = NULL,col.tree = NULL, datatype){
     res[3,1] <-  sum(colSums(data)>0)%>%as.integer() 
   }
   else{
-    res[2,1] <-  nrow(data[rowSums(data)>0])%>%as.integer()
-    res[3,1] <-  ncol(data[colSums(data)>0])%>%as.integer() 
+    res[2,1] <-  nrow(data[rowSums(data)>0,])%>%as.integer()
+    res[3,1] <-  ncol(data[,colSums(data)>0])%>%as.integer() 
   }
   res[4,1] <-  sum(data>0)%>%as.integer()
 
@@ -523,8 +523,8 @@ datainf <- function(data, datatype){
     res[3,1] <-  sum(colSums(data)>0)%>%as.integer() 
   }
   else{
-    res[2,1] <-  nrow(data[rowSums(data)>0])%>%as.integer()
-    res[3,1] <-  ncol(data[colSums(data)>0])%>%as.integer() 
+    res[2,1] <-  nrow(data[rowSums(data)>0,])%>%as.integer()
+    res[3,1] <-  ncol(data[,colSums(data)>0])%>%as.integer() 
   }
   res[4,1] <-  sum(data>0)%>%as.integer()
   res[5,1] <-  round(sum(data>0)/ncol(data)/nrow(data),4)
